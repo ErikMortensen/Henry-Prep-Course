@@ -146,13 +146,13 @@ function crearGato (nombre, edad) {
     // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
     // Tu código:
     producto.calcularPrecioDescuento = function(){
-      let descuento = producto.precio * producto.porcentajeDeDescuento;
+      let descuento = this.precio * this.porcentajeDeDescuento;
   
-      producto.precio = producto.precio - descuento;
-  
-      return producto;
+      this.precio -= descuento;
+
+      return this.precio;
     };
-    
+    return producto; 
   }
   
   // No modificar nada debajo de esta línea
